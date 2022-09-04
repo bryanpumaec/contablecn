@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5716c4a4-ddfc-4949-a8d3-3bbf327b9ed1">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     factura.`fac_num` AS factura_fac_num,
+     factura.`fac_ced` AS factura_fac_ced,
+     factura.`fac_fec` AS factura_fac_fec,
+     factura.`fac_total` AS factura_fac_total,
+     fila.`fil_num` AS fila_fil_num,
+     fila.`fil_nfac` AS fila_fil_nfac,
+     fila.`fil_cpro` AS fila_fil_cpro,
+     fila.`fil_can` AS fila_fil_can,
+     fila.`fil_tot` AS fila_fil_tot,
+     fila.`fil_fecha` AS fila_fil_fecha,
+     producto.`pro_cod` AS producto_pro_cod,
+     producto.`pro_des` AS producto_pro_des,
+     producto.`pro_cos` AS producto_pro_cos,
+     producto.`pro_pre` AS producto_pro_pre,
+     producto.`pro_can` AS producto_pro_can,
+     producto.`pro_ent` AS producto_pro_ent,
+     producto.`pro_salidas` AS producto_pro_salidas,
+     producto.`pro_prov` AS producto_pro_prov,
+     producto.`pro_cat` AS producto_pro_cat,
+     fila_A.`fil_num` AS fila_A_fil_num,
+     fila_A.`fil_nfac` AS fila_A_fil_nfac,
+     fila_A.`fil_cpro` AS fila_A_fil_cpro,
+     fila_A.`fil_can` AS fila_A_fil_can,
+     fila_A.`fil_tot` AS fila_A_fil_tot,
+     fila_A.`fil_fecha` AS fila_A_fil_fecha
+FROM
+     `factura` factura INNER JOIN `fila` fila ON factura.`fac_num` = fila.`fil_nfac`
+     INNER JOIN `producto` producto ON fila.`fil_cpro` = producto.`pro_cod`
+     INNER JOIN `fila` fila_A ON producto.`pro_cod` = fila_A.`fil_cpro`
+     AND factura.`fac_num` = fila_A.`fil_nfac`]]>
+	</queryString>
+	<field name="factura_fac_num" class="java.lang.Integer"/>
+	<field name="factura_fac_ced" class="java.lang.String"/>
+	<field name="factura_fac_fec" class="java.sql.Timestamp"/>
+	<field name="factura_fac_total" class="java.math.BigDecimal"/>
+	<field name="fila_fil_num" class="java.lang.Integer"/>
+	<field name="fila_fil_nfac" class="java.lang.Integer"/>
+	<field name="fila_fil_cpro" class="java.lang.Integer"/>
+	<field name="fila_fil_can" class="java.lang.Integer"/>
+	<field name="fila_fil_tot" class="java.math.BigDecimal"/>
+	<field name="fila_fil_fecha" class="java.sql.Timestamp"/>
+	<field name="producto_pro_cod" class="java.lang.Integer"/>
+	<field name="producto_pro_des" class="java.lang.String"/>
+	<field name="producto_pro_cos" class="java.math.BigDecimal"/>
+	<field name="producto_pro_pre" class="java.math.BigDecimal"/>
+	<field name="producto_pro_can" class="java.lang.Integer"/>
+	<field name="producto_pro_ent" class="java.lang.Integer"/>
+	<field name="producto_pro_salidas" class="java.lang.Integer"/>
+	<field name="producto_pro_prov" class="java.lang.Integer"/>
+	<field name="producto_pro_cat" class="java.lang.Integer"/>
+	<field name="fila_A_fil_num" class="java.lang.Integer"/>
+	<field name="fila_A_fil_nfac" class="java.lang.Integer"/>
+	<field name="fila_A_fil_cpro" class="java.lang.Integer"/>
+	<field name="fila_A_fil_can" class="java.lang.Integer"/>
+	<field name="fila_A_fil_tot" class="java.math.BigDecimal"/>
+	<field name="fila_A_fil_fecha" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<staticText>
+				<reportElement x="264" y="86" width="270" height="20" uuid="e89bbb91-a998-4331-9e77-cc8ad025d648"/>
+				<text><![CDATA[DIRECCIÓN: Av. Fray Vacas Galindo (Mercado La Playita)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="106" width="100" height="20" uuid="31aba89d-1e10-4964-bf42-39c62e601613"/>
+				<text><![CDATA[TELF.: 0984202291]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="575" y="11" width="100" height="20" uuid="aef33d6c-a440-47c4-b9c8-0ac1b317ae05"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="291" y="0" width="225" height="86" uuid="8ea8d634-fb5c-48c4-9cce-0ab3ce418ea0"/>
+				<imageExpression><![CDATA["D:\\DESCARGAS\\UNIVERSIDAD\\TERCERO SISTEMA\\ICONOS\\icon\\cuidadonatural.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="250" y="0" width="314" height="37" uuid="c35c06c5-dcdb-4398-8c98-9d990bb2a529"/>
+				<textElement>
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE VENTAS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="70" height="55" uuid="dd61240c-a03c-45f1-a623-916d2ee2bf95"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="0" width="180" height="55" uuid="eb605dc2-d3d8-4556-86af-9ba4aec1c7e2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRODUCTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="0" width="84" height="55" uuid="b530f1c2-5f13-453c-b0a3-e78bfd4804ce"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P.V.P]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="0" width="92" height="55" uuid="8b4e334b-7ff0-4fb2-8417-355f1833ecf8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="653" y="0" width="149" height="55" uuid="476308fa-812c-4e75-be19-eb4df9da244f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="564" y="0" width="89" height="55" uuid="c14f0bde-59cd-44d8-86cc-15e4c9429cda"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="0" width="138" height="55" uuid="e00227b6-29f2-42f9-87a1-944638565519"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.I. CLIENTE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="70" height="20" uuid="ddf871df-8419-44ef-b217-d39be7031681"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{factura_fac_num}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="138" height="20" uuid="9b6d4d1a-a861-4835-b967-f73ba78906a0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{factura_fac_ced}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="653" y="0" width="149" height="20" uuid="a9eecbc8-4903-47b7-8ad1-8e788e0573db"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{factura_fac_fec}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="0" width="180" height="20" uuid="7e008bc4-7c2f-4266-aba3-8dc3e387a466"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{producto_pro_des}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="388" y="0" width="84" height="20" uuid="4f05481d-221e-4e13-ab1b-01d481c047ef"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{producto_pro_pre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="0" width="92" height="20" uuid="dba8d295-6edc-4d29-aba9-fc084177323b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fila_A_fil_can}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="564" y="0" width="89" height="20" uuid="739b240b-9f9c-4c52-a999-3aa8ad4c0b03"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fila_A_fil_tot}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

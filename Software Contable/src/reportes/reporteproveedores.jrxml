@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5716c4a4-ddfc-4949-a8d3-3bbf327b9ed1">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     proveedor.`prov_ruc` AS proveedor_prov_ruc,
+     proveedor.`prov_nombre` AS proveedor_prov_nombre,
+     proveedor.`prov_direccion` AS proveedor_prov_direccion,
+     proveedor.`prov_geren` AS proveedor_prov_geren,
+     proveedor.`prov_telef` AS proveedor_prov_telef,
+     proveedor.`prov_email` AS proveedor_prov_email
+FROM
+     `proveedor` proveedor]]>
+	</queryString>
+	<field name="proveedor_prov_ruc" class="java.lang.String"/>
+	<field name="proveedor_prov_nombre" class="java.lang.String"/>
+	<field name="proveedor_prov_direccion" class="java.lang.String"/>
+	<field name="proveedor_prov_geren" class="java.lang.String"/>
+	<field name="proveedor_prov_telef" class="java.lang.String"/>
+	<field name="proveedor_prov_email" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<staticText>
+				<reportElement x="264" y="86" width="270" height="20" uuid="e89bbb91-a998-4331-9e77-cc8ad025d648"/>
+				<text><![CDATA[DIRECCIÓN: Av. Fray Vacas Galindo (Mercado La Playita)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="106" width="100" height="20" uuid="31aba89d-1e10-4964-bf42-39c62e601613"/>
+				<text><![CDATA[TELF.: 0984202291]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="575" y="11" width="100" height="20" uuid="aef33d6c-a440-47c4-b9c8-0ac1b317ae05"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="291" y="0" width="225" height="86" uuid="8ea8d634-fb5c-48c4-9cce-0ab3ce418ea0"/>
+				<imageExpression><![CDATA["D:\\DESCARGAS\\UNIVERSIDAD\\TERCERO SISTEMA\\ICONOS\\icon\\cuidadonatural.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="188" y="0" width="421" height="37" uuid="c35c06c5-dcdb-4398-8c98-9d990bb2a529"/>
+				<textElement>
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE PROVEEDORES]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="55" uuid="dd61240c-a03c-45f1-a623-916d2ee2bf95"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="240" height="55" uuid="eb605dc2-d3d8-4556-86af-9ba4aec1c7e2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE DE LA EMPRESA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="0" width="100" height="55" uuid="b530f1c2-5f13-453c-b0a3-e78bfd4804ce"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="100" height="55" uuid="8b4e334b-7ff0-4fb2-8417-355f1833ecf8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GERENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="540" y="0" width="100" height="55" uuid="e91d1572-9e65-4239-b893-47b6927d51ef"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="640" y="0" width="162" height="55" uuid="476308fa-812c-4e75-be19-eb4df9da244f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-MAIL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="51ba0e81-8a9b-4508-a89d-425a36563e35"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{proveedor_prov_ruc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="0" width="162" height="20" uuid="c60d1f9e-bd7e-41fd-bbcb-06041c7c45df"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{proveedor_prov_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="240" height="20" uuid="ad9acc0b-592c-438b-a92c-46a2c69af85f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{proveedor_prov_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="100" height="20" uuid="08d24c24-0586-49c6-8104-c0b57b26bd4c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{proveedor_prov_geren}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="0" width="100" height="20" uuid="809fb5f1-46ab-4708-b432-d7cae2ec4ec9"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{proveedor_prov_direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="540" y="0" width="100" height="20" uuid="05c95fe8-fb7c-4c3f-a3ec-8161f9fd3d04"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{proveedor_prov_telef}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

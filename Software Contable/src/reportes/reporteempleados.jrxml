@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5716c4a4-ddfc-4949-a8d3-3bbf327b9ed1">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     empleado.`emp_ced` AS empleado_emp_ced,
+     empleado.`emp_nom` AS empleado_emp_nom,
+     empleado.`emp_ape` AS empleado_emp_ape,
+     empleado.`emp_dir` AS empleado_emp_dir,
+     empleado.`emp_tel` AS empleado_emp_tel,
+     empleado.`emp_mail` AS empleado_emp_mail
+FROM
+     `empleado` empleado]]>
+	</queryString>
+	<field name="empleado_emp_ced" class="java.lang.String"/>
+	<field name="empleado_emp_nom" class="java.lang.String"/>
+	<field name="empleado_emp_ape" class="java.lang.String"/>
+	<field name="empleado_emp_dir" class="java.lang.String"/>
+	<field name="empleado_emp_tel" class="java.lang.String"/>
+	<field name="empleado_emp_mail" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<staticText>
+				<reportElement x="264" y="86" width="270" height="20" uuid="e89bbb91-a998-4331-9e77-cc8ad025d648"/>
+				<text><![CDATA[DIRECCIÓN: Av. Fray Vacas Galindo (Mercado La Playita)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="106" width="100" height="20" uuid="31aba89d-1e10-4964-bf42-39c62e601613"/>
+				<text><![CDATA[TELF.: 0984202291]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="575" y="11" width="100" height="20" uuid="aef33d6c-a440-47c4-b9c8-0ac1b317ae05"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="291" y="0" width="225" height="86" uuid="8ea8d634-fb5c-48c4-9cce-0ab3ce418ea0"/>
+				<imageExpression><![CDATA["D:\\DESCARGAS\\UNIVERSIDAD\\TERCERO SISTEMA\\ICONOS\\icon\\cuidadonatural.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="219" y="0" width="378" height="37" uuid="c35c06c5-dcdb-4398-8c98-9d990bb2a529"/>
+				<textElement>
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE EMPLEADOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="55" uuid="dd61240c-a03c-45f1-a623-916d2ee2bf95"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CÉDULA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="137" height="55" uuid="eb605dc2-d3d8-4556-86af-9ba4aec1c7e2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="0" width="133" height="55" uuid="b530f1c2-5f13-453c-b0a3-e78bfd4804ce"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="128" height="55" uuid="05b5c350-a46a-4bf9-92dc-bb882850f5d0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="498" y="0" width="136" height="55" uuid="79a44d0c-89d7-45d1-bbee-afef15f3627d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="634" y="0" width="168" height="55" uuid="25521d91-6bbe-46bf-9a9d-bf9a6df3af8e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-MAIL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="be71a97f-fafd-4042-bf75-2a46781ad450"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{empleado_emp_ced}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="137" height="20" uuid="36a5174f-f00a-44e8-83d8-def3d0520560"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{empleado_emp_dir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="133" height="20" uuid="06b3dfab-34f3-4dbb-a0b9-c54927cd6375"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{empleado_emp_tel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="128" height="20" uuid="9e96458c-a432-4a3b-8c12-7d2b8d9b6ff6"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{empleado_emp_mail}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="498" y="0" width="136" height="20" uuid="dd5bb93d-7935-4cb3-aee2-25f31a12dd50"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{empleado_emp_ape}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="634" y="0" width="168" height="20" uuid="0f8ae919-477e-4500-9372-f9a61ddcadfb"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{empleado_emp_nom}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

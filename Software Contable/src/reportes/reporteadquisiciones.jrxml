@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5716c4a4-ddfc-4949-a8d3-3bbf327b9ed1">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     producto.`pro_cod` AS producto_pro_cod,
+     producto.`pro_des` AS producto_pro_des,
+     producto.`pro_cos` AS producto_pro_cos,
+     producto.`pro_pre` AS producto_pro_pre,
+     producto.`pro_can` AS producto_pro_can,
+     producto.`pro_ent` AS producto_pro_ent,
+     producto.`pro_salidas` AS producto_pro_salidas,
+     producto.`pro_prov` AS producto_pro_prov,
+     producto.`pro_cat` AS producto_pro_cat,
+     ingreso.`ing_cod` AS ingreso_ing_cod,
+     ingreso.`ing_cpro` AS ingreso_ing_cpro,
+     ingreso.`ing_can` AS ingreso_ing_can,
+     ingreso.`ing_fecha` AS ingreso_ing_fecha,
+     ingreso.`ing_prov` AS ingreso_ing_prov,
+     ingreso.`ing_proveedor` AS ingreso_ing_proveedor,
+     kardex.`kar_id` AS kardex_kar_id,
+     kardex.`kar_detalle` AS kardex_kar_detalle,
+     kardex.`kar_fecha` AS kardex_kar_fecha,
+     kardex.`kar_codigo_producto` AS kardex_kar_codigo_producto,
+     kardex.`kar_cantidad_entradas` AS kardex_kar_cantidad_entradas,
+     kardex.`kar_total_entradas` AS kardex_kar_total_entradas,
+     kardex.`kar_cantidad_salidas` AS kardex_kar_cantidad_salidas,
+     kardex.`kar_total_salidas` AS kardex_kar_total_salidas,
+     kardex.`kar_cantidad_saldo` AS kardex_kar_cantidad_saldo,
+     kardex.`kar_total_saldo` AS kardex_kar_total_saldo
+FROM
+     `producto` producto INNER JOIN `ingreso` ingreso ON producto.`pro_cod` = ingreso.`ing_cpro`
+     INNER JOIN `kardex` kardex ON producto.`pro_cod` = kardex.`kar_codigo_producto`]]>
+	</queryString>
+	<field name="producto_pro_cod" class="java.lang.Integer"/>
+	<field name="producto_pro_des" class="java.lang.String"/>
+	<field name="producto_pro_cos" class="java.math.BigDecimal"/>
+	<field name="producto_pro_pre" class="java.math.BigDecimal"/>
+	<field name="producto_pro_can" class="java.lang.Integer"/>
+	<field name="producto_pro_ent" class="java.lang.Integer"/>
+	<field name="producto_pro_salidas" class="java.lang.Integer"/>
+	<field name="producto_pro_prov" class="java.lang.Integer"/>
+	<field name="producto_pro_cat" class="java.lang.Integer"/>
+	<field name="ingreso_ing_cod" class="java.lang.Integer"/>
+	<field name="ingreso_ing_cpro" class="java.lang.Integer"/>
+	<field name="ingreso_ing_can" class="java.lang.Integer"/>
+	<field name="ingreso_ing_fecha" class="java.sql.Timestamp"/>
+	<field name="ingreso_ing_prov" class="java.lang.String"/>
+	<field name="ingreso_ing_proveedor" class="java.lang.String"/>
+	<field name="kardex_kar_id" class="java.lang.Integer"/>
+	<field name="kardex_kar_detalle" class="java.lang.String"/>
+	<field name="kardex_kar_fecha" class="java.sql.Timestamp"/>
+	<field name="kardex_kar_codigo_producto" class="java.lang.Integer"/>
+	<field name="kardex_kar_cantidad_entradas" class="java.lang.Integer"/>
+	<field name="kardex_kar_total_entradas" class="java.math.BigDecimal"/>
+	<field name="kardex_kar_cantidad_salidas" class="java.lang.Integer"/>
+	<field name="kardex_kar_total_salidas" class="java.math.BigDecimal"/>
+	<field name="kardex_kar_cantidad_saldo" class="java.lang.Integer"/>
+	<field name="kardex_kar_total_saldo" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<staticText>
+				<reportElement x="264" y="86" width="270" height="20" uuid="e89bbb91-a998-4331-9e77-cc8ad025d648"/>
+				<text><![CDATA[DIRECCIÓN: Av. Fray Vacas Galindo (Mercado La Playita)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="106" width="100" height="20" uuid="31aba89d-1e10-4964-bf42-39c62e601613"/>
+				<text><![CDATA[TELF.: 0984202291]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="575" y="11" width="100" height="20" uuid="aef33d6c-a440-47c4-b9c8-0ac1b317ae05"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="291" y="0" width="225" height="86" uuid="8ea8d634-fb5c-48c4-9cce-0ab3ce418ea0"/>
+				<imageExpression><![CDATA["D:\\DESCARGAS\\UNIVERSIDAD\\TERCERO SISTEMA\\ICONOS\\icon\\cuidadonatural.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="0" width="421" height="37" uuid="c35c06c5-dcdb-4398-8c98-9d990bb2a529"/>
+				<textElement>
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE ADQUISICIONES]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="55" uuid="dd61240c-a03c-45f1-a623-916d2ee2bf95"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="191" height="55" uuid="eb605dc2-d3d8-4556-86af-9ba4aec1c7e2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRODUCTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="0" width="110" height="55" uuid="b530f1c2-5f13-453c-b0a3-e78bfd4804ce"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COSTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="0" width="105" height="55" uuid="8b4e334b-7ff0-4fb2-8417-355f1833ecf8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CANTIDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="623" y="0" width="179" height="55" uuid="476308fa-812c-4e75-be19-eb4df9da244f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="506" y="0" width="117" height="55" uuid="c14f0bde-59cd-44d8-86cc-15e4c9429cda"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="291" y="0" width="110" height="20" uuid="e260540b-7b97-4b2f-b25a-86ee1969e340"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{producto_pro_cos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="4b7568f4-0ad2-4c47-a02d-69e1222c3dad"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ingreso_ing_cod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="401" y="0" width="105" height="20" uuid="c8f7b98c-f6e2-4fe9-ad69-eba9ea8217f8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ingreso_ing_can}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="623" y="0" width="179" height="20" uuid="ea10dec8-607a-4086-80ab-34a3959ae3f3"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ingreso_ing_fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="191" height="20" uuid="2f22a69b-7399-4d18-b992-56604b11df33"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{producto_pro_des}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="506" y="0" width="117" height="20" uuid="6bd785a1-f281-4fab-b15f-e19e7ced0ad2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{kardex_kar_total_entradas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

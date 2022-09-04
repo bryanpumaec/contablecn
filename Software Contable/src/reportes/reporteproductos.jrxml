@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5716c4a4-ddfc-4949-a8d3-3bbf327b9ed1">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     producto.`pro_cod` AS producto_pro_cod,
+     producto.`pro_des` AS producto_pro_des,
+     producto.`pro_cos` AS producto_pro_cos,
+     producto.`pro_pre` AS producto_pro_pre,
+     producto.`pro_can` AS producto_pro_can,
+     producto.`pro_ent` AS producto_pro_ent,
+     producto.`pro_salidas` AS producto_pro_salidas,
+     producto.`pro_prov` AS producto_pro_prov,
+     producto.`pro_cat` AS producto_pro_cat
+FROM
+     `producto` producto]]>
+	</queryString>
+	<field name="producto_pro_cod" class="java.lang.Integer"/>
+	<field name="producto_pro_des" class="java.lang.String"/>
+	<field name="producto_pro_cos" class="java.math.BigDecimal"/>
+	<field name="producto_pro_pre" class="java.math.BigDecimal"/>
+	<field name="producto_pro_can" class="java.lang.Integer"/>
+	<field name="producto_pro_ent" class="java.lang.Integer"/>
+	<field name="producto_pro_salidas" class="java.lang.Integer"/>
+	<field name="producto_pro_prov" class="java.lang.Integer"/>
+	<field name="producto_pro_cat" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<staticText>
+				<reportElement x="264" y="86" width="270" height="20" uuid="e89bbb91-a998-4331-9e77-cc8ad025d648"/>
+				<text><![CDATA[DIRECCIÓN: Av. Fray Vacas Galindo (Mercado La Playita)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="106" width="100" height="20" uuid="31aba89d-1e10-4964-bf42-39c62e601613"/>
+				<text><![CDATA[TELF.: 0984202291]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="575" y="11" width="100" height="20" uuid="aef33d6c-a440-47c4-b9c8-0ac1b317ae05"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="291" y="0" width="225" height="86" uuid="8ea8d634-fb5c-48c4-9cce-0ab3ce418ea0"/>
+				<imageExpression><![CDATA["D:\\DESCARGAS\\UNIVERSIDAD\\TERCERO SISTEMA\\ICONOS\\icon\\cuidadonatural.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="219" y="0" width="378" height="37" uuid="c35c06c5-dcdb-4398-8c98-9d990bb2a529"/>
+				<textElement>
+					<font size="28" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE PRODUCTOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="55" uuid="dd61240c-a03c-45f1-a623-916d2ee2bf95"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="240" height="55" uuid="eb605dc2-d3d8-4556-86af-9ba4aec1c7e2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="0" width="100" height="55" uuid="b530f1c2-5f13-453c-b0a3-e78bfd4804ce"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COSTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="100" height="55" uuid="8b4e334b-7ff0-4fb2-8417-355f1833ecf8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[P.V.P.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="540" y="0" width="100" height="55" uuid="e91d1572-9e65-4239-b893-47b6927d51ef"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STOCK ACTUAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="640" y="0" width="162" height="55" uuid="476308fa-812c-4e75-be19-eb4df9da244f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CATEGORÍA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="0902f6d0-8ad5-4279-800f-2df03896262f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{producto_pro_cod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="240" height="20" uuid="4923f2e7-660d-405d-8647-5a2610c5566f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{producto_pro_des}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="0" width="100" height="20" uuid="c1224564-2c7d-4065-9258-b24ece32d55b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{producto_pro_cos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="100" height="20" uuid="bcc7a625-5f90-4b9c-b79f-11cc2bd14772"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{producto_pro_pre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="540" y="0" width="100" height="20" uuid="a12d70a8-a8e9-4210-850b-aee2ddd79be9"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{producto_pro_can}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="0" width="162" height="20" uuid="0bc0e083-bd9d-4503-a4c7-193279dd7166"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{producto_pro_cat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
